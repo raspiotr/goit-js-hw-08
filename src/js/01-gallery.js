@@ -1,5 +1,5 @@
-import 'simplelightbox/dist/simple-lightbox.min.css';
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 // Add imports above this line
 import { galleryItems } from './gallery-items';
@@ -27,6 +27,9 @@ const galleryMarkup = galleryItems.map(picture =>
 
 const gallery = document.querySelector('.gallery');
 gallery.prepend(...galleryMarkup);
+
+gallery.style.listStyle = 'none';
+gallery.style.padding = '0';
 
 const lightboxGallery = new SimpleLightbox('.gallery a', {
   captions: true,
