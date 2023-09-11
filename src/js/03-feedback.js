@@ -30,10 +30,10 @@ messageInput.addEventListener('input', saveDataToLocalStorage);
 
 function submitData(event) {
   event.preventDefault();
-  const formDataToSend = JSON.parse(
-    localStorage.getItem('feedback-form-state')
-  );
   if (emailInput.value !== '' && messageInput.value !== '') {
+    const formDataToSend = JSON.parse(
+      localStorage.getItem('feedback-form-state')
+    );
     console.log(formDataToSend);
     localStorage.removeItem('feedback-form-state');
     emailInput.value = '';
