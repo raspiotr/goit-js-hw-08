@@ -33,10 +33,14 @@ function submitData(event) {
   const formDataToSend = JSON.parse(
     localStorage.getItem('feedback-form-state')
   );
-  console.log(formDataToSend);
-  localStorage.removeItem('feedback-form-state');
-  emailInput.value = '';
-  messageInput.value = '';
+  if (emailInput.value !== '' && messageInput.value !== '') {
+    console.log(formDataToSend);
+    localStorage.removeItem('feedback-form-state');
+    emailInput.value = '';
+    messageInput.value = '';
+  } else {
+    alert('You should fill in all the fields!');
+  }
 }
 
 form.addEventListener('submit', submitData);
